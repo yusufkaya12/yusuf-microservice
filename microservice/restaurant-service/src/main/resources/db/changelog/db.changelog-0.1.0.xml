@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet author="bariskantar" id="2">
+      <createTable tableName="restaurants">
+         <column name="id" type="${uuid_type}"/>
+          <column name="city_id" type="${uuid_type}"/>
+          <column name="street_id" type="${uuid_type}"/>
+          <column name="county_id" type="${uuid_type}"/>
+          <column name="name" type="varchar(255)"/>
+          <column name="address" type="varchar(255)"/>
+
+      </createTable>
+        <insert tableName="restaurants">
+            <column name="id" value="26c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="city_id" value="43c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="street_id" value="45c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="county_id" value="44c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="name" value="Köşem pide Fırını"></column>
+            <column name="address" value="Şirinler Apartmanı"></column>
+        </insert>
+
+    </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="yusufkaya">
+        <insert tableName="categories">
+            <column name="id" value="29c953f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Ev Yemekleri"/>
+        </insert>
+
+        <insert tableName="categories">
+            <column name="id" value="29c9e3f4-c7ef-45e8-920b-753f63ff2634"/>
+            <column name="name" value="Sokak Lezzetleri"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="48065e6a-3348-4441-8780-64a2f2462284"/>
+            <column name="name" value="Burger ve Pizza"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="97f67484-4b8b-4d44-9243-057a5e872f79"/>
+            <column name="name" value="Kahvaltı"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="40725334-d58e-445d-9431-461f3023a834"/>
+            <column name="name" value="Pastane ve Fırın"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="29c8b3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Yöresel Lezzetler"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="21c976f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Marul"/>
+            <column name="photos3key" value="54639833-7435-40f2-a505-187532224321"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="21c9e3f4-c7ef-45e8-920b-123f53ff2634"/>
+            <column name="name" value="Turşu"/>
+            <column name="photos3key" value="a9472122-6163-4121-b912-412425624144"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="8841250e-5711-4344-b725-b58a78435225"/>
+            <column name="name" value="Yoğurt"/>
+            <column name="photos3key" value="a1372233-2373-4024-a324-212312431523"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="5283e044-7a9b-43a2-a88d-207a70b82656"/>
+            <column name="name" value="Domates"/>
+            <column name="photos3key" value="43653522-5252-4454-a373-232343234323"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="9d99a491-327e-4341-a77c-943235807441"/>
+            <column name="name" value="Salam"/>
+            <column name="photos3key" value="43252352-5242-4542-a434-234252342342"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="d8b57832-8473-4321-a940-047114195422"/>
+            <column name="name" value="Sosis"/>
+            <column name="photos3key" value="42342352-5232-4252-a543-234234234234"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="17351572-26f8-4f36-a291-160876453621"/>
+            <column name="name" value="Mısır"/>
+            <column name="photos3key" value="23423452-5232-4234-a653-234234234234"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="4285a682-e964-424e-8733-492787214273"/>
+            <column name="name" value="Özel Sos"/>
+            <column name="photos3key" value="32423452-5232-4234-a763-234234234234"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="d3843702-3859-450f-a874-542256127930"/>
+            <column name="name" value="Kaşar"/>
+            <column name="photos3key" value="42343452-5232-4234-a873-234234234234"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="52643822-0a64-4889-b702-334251274748"/>
+            <column name="name" value="Sucuk"/>
+            <column name="photos3key" value="42343452-5232-4234-a983-234234234234"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="4d534272-4157-4972-a152-172462245132"/>
+            <column name="name" value="Yumurta"/>
+            <column name="photos3key" value="42343452-5232-4234-aa93-234234234234"/>
+        </insert>
+        <insert tableName="foods">
+            <column name="id" value="22919408-b106-415f-a471-f07358375037"/>
+            <column name="name" value="Tantuni"/>
+            <column name="category_id" value="29c9e3f4-c7ef-45e8-920b-753f63ff2634"/>
+        </insert>
+        <insert tableName="foods">
+            <column name="id" value="d0902746-7e1b-4311-8322-4b0771255d54"/>
+            <column name="name" value="Baklava"/>
+            <column name="category_id" value="40725334-d58e-445d-9431-461f3023a834"/>
+        </insert>
+        <insert tableName="foods">
+            <column name="id" value="513234a7-7943-416b-a28a-885b34847533"/>
+            <column name="name" value="Tost"/>
+            <column name="category_id" value="97f67484-4b8b-4d44-9243-057a5e872f79"/>
+        </insert>
+        <insert tableName="foods">
+            <column name="id" value="55710188-4d62-492b-b27c-f2154a335849"/>
+            <column name="name" value="Pide"/>
+            <column name="category_id" value="40725334-d58e-445d-9431-461f3023a834"/>
+
+        </insert>
+        <insert tableName="foods">
+            <column name="id" value="05798926-4821-4e54-b131-563101385734"/>
+            <column name="name" value="Cağ Kebabı"/>
+            <column name="category_id" value="29c8b3f4-c7ef-45e8-920b-753f53ff2634"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

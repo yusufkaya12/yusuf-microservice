@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="yusufkaya">
+        <createTable tableName="cities_counties">
+            <column name="cities_id" type="${uuid_type}"/>
+            <column name="counties_id" type="${uuid_type}"/>
+        </createTable>
+        <insert tableName="cities_counties">
+            <column name="cities_id" value="43c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="counties_id" value="44c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+        </insert>
+        <createTable tableName="counties_streets">
+            <column name="streets_id" type="${uuid_type}"/>
+            <column name="counties_id" type="${uuid_type}"/>
+        </createTable>
+        <insert tableName="counties_streets">
+            <column name="streets_id" value="45c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="counties_id" value="44c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

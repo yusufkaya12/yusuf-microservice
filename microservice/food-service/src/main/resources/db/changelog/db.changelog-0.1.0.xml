@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="yusufkaya" id="1" >
+        <createTable tableName="foods">
+            <column name="id" type="${uuid_type}"/>
+            <column name="name" type="varchar(255)"/>
+            <column name="category_id" type="${uuid_type}"/>
+            <column name="price" type="DECIMAL(5, 2)"/>
+        </createTable>
+
+        <createTable tableName="categories">
+            <column name="id" type="${uuid_type}"/>
+            <column name="name" type="varchar(255)"/>
+
+        </createTable>
+
+        <createTable tableName="ingredients">
+            <column name="id" type="${uuid_type}"/>
+            <column name="name" type="varchar(255)"/>
+            <column name="photos3key" type="varchar(255)"/>
+
+        </createTable>
+        <createTable tableName="food_ingredient">
+            <column name="food_id" type="${uuid_type}"/>
+            <column name="ingredient_id" type="${uuid_type}"/>
+        </createTable>
+
+        <insert tableName="foods">
+            <column name="id" value="11c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Pizza"/>
+            <column name="category_id" value="48065e6a-3348-4441-8780-64a2f2462284"/>
+
+        </insert>
+        <insert tableName="foods">
+            <column name="id" value="12c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Hamburger"/>
+            <column name="category_id" value="48065e6a-3348-4441-8780-64a2f2462284"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="29c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Kebap"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="19c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Döner"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="34c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Mayonez"/>
+            <column name="photos3key" value="248effa9-270a-4204-854b-fcda30c3c4bb"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="31c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Ketçap"/>
+            <column name="photos3key" value="db7c0569-a493-4c3a-90a5-45a3b7c6183c"/>
+        </insert>
+        <insert tableName="ingredients">
+            <column name="id" value="21c9e3f4-c7ef-45e8-920b-753f53ff2634"/>
+            <column name="name" value="Sarımsaklı Mayonez"/>
+            <column name="photos3key" value="4b29e703-cac0-443e-af0e-6ad2687f5196"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,127 @@
+version: "2.1"
+
+services:
+#  config-service:
+#    container_name: config-service
+#    image: config-service:1.0.0
+#    build:
+#      context: "./config-service"
+#      dockerfile: "./src/main/docker/Dockerfile"
+#    healthcheck:
+#      test: "curl -f  http://localhost:8889/actuator"
+#      interval: 5s
+#      timeout: 2s
+#      retries: 5
+#
+#  discovery-service:
+#    container_name: discovery-service
+#    image: discovery-service:1.0.0
+#    build:
+#      context: "./discovery-service"
+#      dockerfile: "./src/main/docker/Dockerfile"
+#    env_file:
+#      - docker-variables.env
+#    ports:
+#      - "8761:8761"
+#    depends_on:
+#      config-service:
+#        condition: service_healthy
+#
+#  gateway-service:
+#    container_name: gateway-service
+#    image: gateway-service:1.0.0
+#    build:
+#      context: "./gateway-service"
+#      dockerfile: "./src/main/docker/Dockerfile"
+#    env_file:
+#      - docker-variables.env
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - config-service
+#      - discovery-service
+#
+#  city-service:
+#    container_name: city-service
+#    image: city-service:1.0.0
+#    build:
+#      context: "./city-service"
+#      dockerfile: "./src/main/docker/Dockerfile"
+#    env_file:
+#      - docker-variables.env
+#    ports:
+#      - "8020:8020"
+#    depends_on:
+#      - config-service
+#      - discovery-service
+#
+#  auth-service:
+#    container_name: auth-service
+#    image: auth-service:1.0.0
+#    build:
+#      context: "./auth-service"
+#      dockerfile: "./src/main/docker/Dockerfile"
+#    ports:
+#      - "9000:9000"
+#    depends_on:
+#      - config-service
+#      - discovery-service
+
+  3pounds-postgres:
+    container_name: 3pounds-postgres
+    image: 3pounds/postgres:1.0.0
+    build:
+      context: "./docker/postgres"
+      dockerfile: "./Dockerfile"
+    command: postgres -c 'max_connections=200' -c 'shared_buffers=256MB'
+    env_file:
+      - docker-variables.env
+    ports:
+      - "5432:5432"
+    hostname: postgres
+    volumes:
+      - 3pounds-postgres-data-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: baris@3pounds.com
+      PGADMIN_DEFAULT_PASSWORD: 3pounds
+    volumes:
+      - 3pounds-pgadmin-data-volume:/var/lib/pgadmin
+
+  rabbit:
+    container_name: threepounds-rabbit
+    image: threepounds/rabbit:1.0.0
+    build:
+      context: "./docker/rabbitmq"
+      dockerfile: "./Dockerfile"
+    env_file:
+      - docker-variables.env
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://RabbitUser:RabbitPwd123!@localhost:15672" ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  3pounds-postgres-data-volume:
+    driver: local
+  3pounds-pgadmin-data-volume:
+    driver: local
+
+networks:
+  pounds:
+    external: true

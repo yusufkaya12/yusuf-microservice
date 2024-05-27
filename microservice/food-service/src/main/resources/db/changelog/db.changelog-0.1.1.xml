@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="yusufkaya">
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="12c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="ingredient_id" value="21c976f4-c7ef-45e8-920b-753f53ff2634"/>
+
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="12c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="ingredient_id" value="4b29e703-cac0-443e-af0e-6ad2687f5196"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="12c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="ingredient_id" value="21c9e3f4-c7ef-45e8-920b-123f53ff2634"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="12c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="ingredient_id" value="5283e044-7a9b-43a2-a88d-207a70b82656"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="11c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="ingredient_id" value="9d99a491-327e-4341-a77c-943235807441"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="11c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="ingredient_id" value="d8b57832-8473-4321-a940-047114195422"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="11c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="ingredient_id" value="17351572-26f8-4f36-a291-160876453621"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="11c9e3f4-c7ef-45e8-920b-753f53ff2634"></column>
+            <column name="ingredient_id" value="4285a682-e964-424e-8733-492787214273"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="22919408-b106-415f-a471-f07358375037"></column>
+            <column name="ingredient_id" value="5283e044-7a9b-43a2-a88d-207a70b82656"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="22919408-b106-415f-a471-f07358375037"></column>
+            <column name="ingredient_id" value="a5824152-a798-4122-a481-53998693d176"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="513234a7-7943-416b-a28a-885b34847533"></column>
+            <column name="ingredient_id" value="5283e044-7a9b-43a2-a88d-207a70b82656"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="513234a7-7943-416b-a28a-885b34847533"></column>
+            <column name="ingredient_id" value="d3843702-3859-450f-a874-542256127930"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="513234a7-7943-416b-a28a-885b34847533"></column>
+            <column name="ingredient_id" value="52643822-0a64-4889-b702-334251274748"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="55710188-4d62-492b-b27c-f2154a335849"></column>
+            <column name="ingredient_id" value="4d534272-4157-4972-a152-172462245132"/>
+        </insert>
+        <insert tableName="food_ingredient">
+            <column name="food_id" value="55710188-4d62-492b-b27c-f2154a335849"></column>
+            <column name="ingredient_id" value="4d534272-4157-4972-a152-172462245132"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

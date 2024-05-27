@@ -1,0 +1,56 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: auth-service
+  cloud:
+    config:
+      uri: http://${CONFIGURATION_HOST:localhost}:${CONFIGURATION_PORT:8888}
+      fail-fast: false
+      label: ""
+
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5432/authdb
+    username: ${AUTH_DB_USER:AuthDbUser}
+    password: ${AUTH_DB_PASSWORD:AuthDbPwd123!}
+    hikari:
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+        useLocalSessionState: true
+        useLocalTransactionState: true
+        rewriteBatchedStatements: true
+        cacheResultSetMetadata: true
+        cacheServerConfiguration: true
+        elideSetAutoCommits: true
+        maintainTimeStats: false
+      
+  jpa:
+    hibernate:
+      ddlAuto: none
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 353610765388-944ahf0fr2sq7reqboui16dehl7ilbmj.apps.googleusercontent.com
+            clientSecret: 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
+            redirectUri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorizationUri: "https://accounts.google.com/o/oauth2/v2/auth"
+            tokenUri: "https://www.googleapis.com/oauth2/v4/token"
+            userInfoUri: "https://www.googleapis.com/oauth2/v3/userinfo"
+            jwkSetUri: "https://www.googleapis.com/oauth2/v3/certs"
+            clientName: "Google"
+            scope:
+              - email
+              - profile
+              - address
+              - phone
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+    enabled: true

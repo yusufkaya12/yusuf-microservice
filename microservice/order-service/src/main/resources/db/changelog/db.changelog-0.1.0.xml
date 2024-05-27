@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="yusufkaya">
+        <createTable tableName="orders">
+            <column name="id" type="${uuid_type}"></column>
+            <column name="restaurant_id" type="${uuid_type}"></column>
+            <column name="user_id" type="${uuid_type}"></column>
+            <column name="note" type="varchar(255)"></column>
+            <column name="payment_type" type="varchar(255)"></column>
+            <column name="price" type="DECIMAL(5, 2)"/>
+            <column name="created_date" type="${timestamp_type}"/>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
